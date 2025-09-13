@@ -6,16 +6,13 @@
   <title>Fe-nix Music: Sello Urbano Independiente Bogotá | Plan 8 Semanas</title>
   <meta name="description" content="Co-crea tu marca urbana con Fe-nix Music. Plan 8 semanas con contrato 50/50, producción pro y estrategia TikTok. Evalúa tu demo gratis en Bogotá." />
   
-  <!-- Preconexión para Google Fonts para mejorar la velocidad de carga -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Barlow:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
     /* ===== RESET & BASE ===== */
-    *,
-    *::before,
-    *::after {
+    * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
@@ -23,7 +20,6 @@
 
     html {
       scroll-behavior: smooth;
-      -webkit-text-size-adjust: 100%;
     }
 
     body {
@@ -34,64 +30,27 @@
       overflow-x: hidden;
     }
 
-    /* ===== VARIABLES ===== */
-    :root {
-      /* Colores */
-      --black: #0a0a0a;
-      --gray-900: #111111;
-      --gray-800: #1a1a1a;
-      --gray-700: #2a2a2a;
-      --gray-600: #3a3a3a;
-      --gray-300: #8a8a8a;
-      --gray-100: #f5f5f5;
-      --white: #ffffff;
-      
-      --primary: #ff6b35;
-      --primary-light: #ff8555;
-      --primary-dark: #e55a2b;
-      --secondary: #ffd23f;
-      --accent: #06d6a0;
-      
-      /* Espaciado */
-      --space-1: 0.25rem;
-      --space-2: 0.5rem;
-      --space-3: 0.75rem;
-      --space-4: 1rem;
-      --space-6: 1.5rem;
-      --space-8: 2rem;
-      --space-12: 3rem;
-      --space-16: 4rem;
-      --space-24: 6rem;
-      
-      /* Contenedor */
-      --max-width: 1200px;
-      
-      /* Tipografía */
-      --font-display: 'Barlow', sans-serif;
-      --font-body: 'Inter', sans-serif;
-    }
-
     /* ===== UTILIDADES ===== */
     .container {
-      max-width: var(--max-width);
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 0 var(--space-4);
+      padding: 0 1rem;
     }
 
     @media (min-width: 768px) {
       .container {
-        padding: 0 var(--space-8);
+        padding: 0 2rem;
       }
     }
 
-    /* ===== SKIP LINK (ACCESIBILIDAD) ===== */
+    /* ===== SKIP LINK ===== */
     .skip-link {
       position: absolute;
       top: -4rem;
-      left: var(--space-4);
-      background: var(--primary);
-      color: var(--white);
-      padding: var(--space-2) var(--space-4);
+      left: 1rem;
+      background: #ff6b35;
+      color: #ffffff;
+      padding: 0.5rem 1rem;
       border-radius: 8px;
       text-decoration: none;
       font-weight: 600;
@@ -100,7 +59,7 @@
     }
 
     .skip-link:focus {
-      top: var(--space-4);
+      top: 1rem;
     }
 
     /* ===== HEADER ===== */
@@ -109,10 +68,9 @@
       top: 0;
       left: 0;
       right: 0;
-      background: rgba(10, 10, 10, 0.9);
-      backdrop-filter: blur(15px);
-      -webkit-backdrop-filter: blur(15px);
-      border-bottom: 1px solid rgba(255, 107, 53, 0.1);
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 107, 53, 0.2);
       z-index: 100;
       transition: transform 0.3s ease;
     }
@@ -125,22 +83,18 @@
     }
 
     .logo {
-      font-family: var(--font-display);
+      font-family: 'Barlow', sans-serif;
       font-weight: 800;
       font-size: 1.5rem;
       text-decoration: none;
-      color: var(--white);
-    }
-
-    .logo__text {
-      color: var(--white);
+      color: #ffffff;
     }
 
     .logo__accent {
-      color: var(--primary);
+      color: #ff6b35;
     }
 
-    /* Menu Toggle (Móvil) */
+    /* Menu Toggle */
     .menu-toggle {
       display: flex;
       flex-direction: column;
@@ -157,21 +111,20 @@
     .menu-toggle__bar {
       width: 24px;
       height: 2px;
-      background: var(--white);
+      background: #ffffff;
       border-radius: 2px;
       transition: all 0.3s ease;
-      transform-origin: center;
     }
 
-    .menu-toggle[aria-expanded="true"] .menu-toggle__bar:nth-child(1) {
+    .menu-toggle.active .menu-toggle__bar:nth-child(1) {
       transform: rotate(45deg) translate(5px, 5px);
     }
 
-    .menu-toggle[aria-expanded="true"] .menu-toggle__bar:nth-child(2) {
+    .menu-toggle.active .menu-toggle__bar:nth-child(2) {
       opacity: 0;
     }
 
-    .menu-toggle[aria-expanded="true"] .menu-toggle__bar:nth-child(3) {
+    .menu-toggle.active .menu-toggle__bar:nth-child(3) {
       transform: rotate(-45deg) translate(5px, -5px);
     }
 
@@ -183,7 +136,6 @@
       right: 0;
       bottom: 0;
       background: rgba(10, 10, 10, 0.98);
-      backdrop-filter: blur(20px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -203,21 +155,21 @@
     }
 
     .primary-nav__list li {
-      margin: var(--space-6) 0;
+      margin: 1.5rem 0;
     }
 
     .primary-nav__list a {
-      font-family: var(--font-display);
+      font-family: 'Barlow', sans-serif;
       font-size: 2rem;
       font-weight: 700;
-      color: var(--white);
+      color: #ffffff;
       text-decoration: none;
       transition: color 0.3s ease;
     }
 
     .primary-nav__list a:hover,
     .primary-nav__list a:focus {
-      color: var(--primary);
+      color: #ff6b35;
     }
 
     @media (min-width: 768px) {
@@ -228,7 +180,6 @@
       .primary-nav {
         position: static;
         background: transparent;
-        backdrop-filter: none;
         opacity: 1;
         visibility: visible;
         width: auto;
@@ -237,7 +188,7 @@
       
       .primary-nav__list {
         display: flex;
-        gap: var(--space-8);
+        gap: 2rem;
       }
       
       .primary-nav__list li {
@@ -258,9 +209,10 @@
         left: 0;
         width: 0;
         height: 2px;
-        background: var(--primary);
+        background: #ff6b35;
         transition: width 0.3s ease;
       }
+      
       .primary-nav__list a:hover::after,
       .primary-nav__list a:focus::after {
         width: 100%;
@@ -272,8 +224,8 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: var(--space-2);
-      padding: var(--space-4) var(--space-8);
+      gap: 0.5rem;
+      padding: 1rem 2rem;
       border-radius: 50px;
       text-decoration: none;
       font-weight: 600;
@@ -285,45 +237,42 @@
     }
 
     .btn--primary {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-      color: var(--white);
-      border-color: var(--primary);
+      background: #ff6b35;
+      color: #ffffff;
+      border-color: #ff6b35;
+      box-shadow: 0 0 20px rgba(255, 107, 53, 0.4);
     }
 
     .btn--primary:hover,
     .btn--primary:focus {
-      background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+      background: #ff8555;
       transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
-    }
-
-    .btn--glow {
-      box-shadow: 0 0 20px rgba(255, 107, 53, 0.4);
+      box-shadow: 0 10px 30px rgba(255, 107, 53, 0.5);
     }
 
     .btn--outline {
       background: transparent;
-      color: var(--white);
-      border-color: var(--white);
+      color: #ffffff;
+      border-color: #ffffff;
     }
 
     .btn--outline:hover,
     .btn--outline:focus {
-      background: var(--white);
-      color: var(--black);
+      background: #ffffff;
+      color: #0a0a0a;
     }
 
     .btn--secondary {
-      background: var(--secondary);
-      color: var(--black);
-      border-color: var(--secondary);
+      background: #ffd23f;
+      color: #0a0a0a;
+      border-color: #ffd23f;
     }
 
     .btn--secondary:hover,
     .btn--secondary:focus {
       background: transparent;
-      color: var(--secondary);
-      border-color: var(--secondary);
+      color: #ffd23f;
+      border-color: #ffd23f;
     }
 
     .btn--full {
@@ -336,42 +285,33 @@
       min-height: 100vh;
       display: flex;
       align-items: center;
-      overflow: hidden;
-      padding-top: 80px; /* Offset for fixed header */
-    }
-
-    .hero__bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: 
-        radial-gradient(circle at 20% 50%, rgba(255, 107, 53, 0.1) 0%, transparent 40%),
-        radial-gradient(circle at 80% 20%, rgba(6, 214, 160, 0.1) 0%, transparent 40%),
-        radial-gradient(circle at 40% 80%, rgba(255, 210, 63, 0.1) 0%, transparent 40%);
-      z-index: -1;
+      padding-top: 80px;
+      background: radial-gradient(circle at 20% 50%, rgba(255, 107, 53, 0.1) 0%, transparent 40%),
+                  radial-gradient(circle at 80% 20%, rgba(6, 214, 160, 0.1) 0%, transparent 40%),
+                  radial-gradient(circle at 40% 80%, rgba(255, 210, 63, 0.1) 0%, transparent 40%);
     }
 
     .hero__content {
       display: grid;
       grid-template-columns: 1fr;
-      gap: var(--space-12);
+      gap: 3rem;
       align-items: center;
+      padding: 2rem 0;
     }
 
     @media (min-width: 968px) {
       .hero__content {
         grid-template-columns: 1fr 1fr;
+        gap: 4rem;
       }
     }
 
     .hero__title {
-      font-family: var(--font-display);
+      font-family: 'Barlow', sans-serif;
       font-size: clamp(2.5rem, 8vw, 4.5rem);
       font-weight: 900;
       line-height: 1.1;
-      margin-bottom: var(--space-6);
+      margin-bottom: 1.5rem;
     }
 
     .hero__title-line {
@@ -379,30 +319,30 @@
     }
 
     .hero__title-line--accent {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      background: linear-gradient(135deg, #ff6b35 0%, #ffd23f 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      text-fill-color: transparent;
     }
 
     .hero__subtitle {
       font-size: 1.25rem;
-      color: var(--gray-300);
+      color: #8a8a8a;
       max-width: 50ch;
-      margin-bottom: var(--space-8);
+      margin-bottom: 2rem;
     }
 
     .hero__actions {
       display: flex;
       flex-wrap: wrap;
-      gap: var(--space-4);
+      gap: 1rem;
     }
 
     /* Sound Wave Animation */
     .hero__visual {
       display: none;
     }
+
     @media (min-width: 968px) {
       .hero__visual {
         display: block;
@@ -419,65 +359,65 @@
 
     .wave-bar {
       width: 8px;
-      background: linear-gradient(to top, var(--primary), var(--secondary));
+      background: linear-gradient(to top, #ff6b35, #ffd23f);
       border-radius: 4px;
       animation: wave 1.5s ease-in-out infinite alternate;
     }
 
-    .wave-bar:nth-child(1) { animation-delay: 0s; }
-    .wave-bar:nth-child(2) { animation-delay: 0.1s; }
-    .wave-bar:nth-child(3) { animation-delay: 0.2s; }
-    .wave-bar:nth-child(4) { animation-delay: 0.3s; }
-    .wave-bar:nth-child(5) { animation-delay: 0.4s; }
-    .wave-bar:nth-child(6) { animation-delay: 0.5s; }
-    .wave-bar:nth-child(7) { animation-delay: 0.6s; }
+    .wave-bar:nth-child(1) { animation-delay: 0s; height: 20px; }
+    .wave-bar:nth-child(2) { animation-delay: 0.1s; height: 30px; }
+    .wave-bar:nth-child(3) { animation-delay: 0.2s; height: 40px; }
+    .wave-bar:nth-child(4) { animation-delay: 0.3s; height: 60px; }
+    .wave-bar:nth-child(5) { animation-delay: 0.4s; height: 40px; }
+    .wave-bar:nth-child(6) { animation-delay: 0.5s; height: 30px; }
+    .wave-bar:nth-child(7) { animation-delay: 0.6s; height: 20px; }
 
     @keyframes wave {
-      0% { height: 20px; }
-      100% { height: 120px; }
+      0% { transform: scaleY(0.5); }
+      100% { transform: scaleY(1.5); }
     }
 
     /* ===== SECCIONES ===== */
     .section {
-      padding: var(--space-16) 0;
+      padding: 4rem 0;
     }
+
     @media (min-width: 768px) {
       .section {
-        padding: var(--space-24) 0;
+        padding: 6rem 0;
       }
     }
 
     .section__title {
-      font-family: var(--font-display);
+      font-family: 'Barlow', sans-serif;
       font-size: clamp(2rem, 5vw, 3rem);
       font-weight: 800;
       text-align: center;
-      margin-bottom: var(--space-8);
-      background: linear-gradient(135deg, var(--white) 0%, var(--gray-300) 100%);
+      margin-bottom: 2rem;
+      background: linear-gradient(135deg, #ffffff 0%, #8a8a8a 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      text-fill-color: transparent;
     }
 
     .section__subtitle {
       font-size: 1.25rem;
-      color: var(--gray-300);
+      color: #8a8a8a;
       text-align: center;
       max-width: 60ch;
-      margin: 0 auto var(--space-12);
+      margin: 0 auto 3rem;
     }
 
     .section__cta {
       text-align: center;
-      margin-top: var(--space-12);
+      margin-top: 3rem;
     }
 
     /* ===== FEATURES ===== */
     .features {
       display: grid;
-      gap: var(--space-8);
-      margin-bottom: var(--space-12);
+      gap: 2rem;
+      margin-bottom: 3rem;
     }
 
     @media (min-width: 768px) {
@@ -488,7 +428,7 @@
 
     .feature {
       text-align: center;
-      padding: var(--space-8);
+      padding: 2rem;
       background: rgba(255, 255, 255, 0.02);
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 20px;
@@ -502,111 +442,71 @@
 
     .feature__icon {
       font-size: 3rem;
-      margin-bottom: var(--space-4);
+      margin-bottom: 1rem;
       display: block;
     }
 
     .feature__title {
-      font-family: var(--font-display);
+      font-family: 'Barlow', sans-serif;
       font-size: 1.5rem;
       font-weight: 700;
-      margin-bottom: var(--space-3);
-      color: var(--white);
+      margin-bottom: 0.75rem;
+      color: #ffffff;
     }
 
     .feature__text {
-      color: var(--gray-300);
+      color: #8a8a8a;
     }
 
     /* ===== TIMELINE ===== */
+    .plan-section {
+      margin-top: 4rem;
+    }
+
     .timeline {
       max-width: 800px;
       margin: 0 auto;
-      position: relative;
-      padding: var(--space-8) 0;
-    }
-    
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 30px;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: rgba(255, 255, 255, 0.1);
-    }
-
-    @media (min-width: 768px) {
-      .timeline::before {
-        left: 50%;
-        transform: translateX(-50%);
-      }
     }
 
     .timeline-item {
       display: flex;
-      gap: var(--space-6);
-      margin-bottom: var(--space-8);
-      position: relative;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      align-items: center;
     }
 
     .timeline-marker {
       flex-shrink: 0;
       width: 60px;
       height: 60px;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      background: linear-gradient(135deg, #ff6b35 0%, #ffd23f 100%);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 800;
-      color: var(--black);
+      color: #0a0a0a;
       font-size: 0.9rem;
-      border: 4px solid var(--black);
-      z-index: 1;
+      border: 4px solid #0a0a0a;
     }
 
     .timeline-content {
-      background: var(--gray-900);
-      padding: var(--space-6);
+      background: #111111;
+      padding: 1.5rem;
       border-radius: 12px;
       flex-grow: 1;
     }
-    
-    @media (min-width: 768px) {
-      .timeline-item:nth-child(odd) {
-        flex-direction: row-reverse;
-      }
-
-      .timeline-item:nth-child(odd) .timeline-content {
-        text-align: right;
-      }
-      
-      .timeline-item {
-        width: 50%;
-      }
-      .timeline-item:nth-child(even) {
-        align-self: flex-start;
-        padding-right: var(--space-8);
-        transform: translateX(-60px);
-      }
-      .timeline-item:nth-child(odd) {
-        align-self: flex-end;
-        padding-left: var(--space-8);
-        transform: translateX(60px);
-      }
-    }
 
     .timeline-content h3 {
-      font-family: var(--font-display);
+      font-family: 'Barlow', sans-serif;
       font-size: 1.25rem;
       font-weight: 700;
-      margin-bottom: var(--space-2);
-      color: var(--white);
+      margin-bottom: 0.5rem;
+      color: #ffffff;
     }
 
     .timeline-content p {
-      color: var(--gray-300);
+      color: #8a8a8a;
     }
 
     /* ===== CASE STUDY ===== */
@@ -614,52 +514,48 @@
       max-width: 600px;
       margin: 0 auto;
       text-align: center;
-      padding: var(--space-12);
+      padding: 3rem;
       background: rgba(255, 255, 255, 0.02);
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 30px;
     }
 
     .case-study__artist {
-      font-family: var(--font-display);
+      font-family: 'Barlow', sans-serif;
       font-size: 2rem;
       font-weight: 800;
-      color: var(--primary);
-      margin-bottom: var(--space-4);
+      color: #ff6b35;
+      margin-bottom: 1rem;
     }
 
     .case-study__result {
       font-size: 1.25rem;
-      margin-bottom: var(--space-8);
-      color: var(--gray-300);
+      margin-bottom: 2rem;
+      color: #8a8a8a;
     }
 
     .highlight {
-      color: var(--secondary);
+      color: #ffd23f;
       font-weight: 700;
     }
 
     .case-study__stats {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-      gap: var(--space-6);
-    }
-
-    .stat {
-      text-align: center;
+      gap: 1.5rem;
     }
 
     .stat__number {
       display: block;
-      font-family: var(--font-display);
+      font-family: 'Barlow', sans-serif;
       font-size: 2rem;
       font-weight: 800;
-      color: var(--white);
+      color: #ffffff;
     }
 
     .stat__label {
       font-size: 0.875rem;
-      color: var(--gray-300);
+      color: #8a8a8a;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
@@ -668,30 +564,30 @@
     .contact-form {
       max-width: 600px;
       margin: 0 auto;
-      background: var(--gray-900);
-      padding: var(--space-8);
+      background: #111111;
+      padding: 2rem;
       border-radius: 20px;
     }
 
     .form-group {
-      margin-bottom: var(--space-6);
+      margin-bottom: 1.5rem;
     }
 
     .form-group label {
       display: block;
-      margin-bottom: var(--space-2);
+      margin-bottom: 0.5rem;
       font-weight: 600;
-      color: var(--white);
+      color: #ffffff;
     }
 
     .form-group input,
     .form-group textarea {
       width: 100%;
-      padding: var(--space-4);
+      padding: 1rem;
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 12px;
-      color: var(--white);
+      color: #ffffff;
       font-size: 1rem;
       transition: border-color 0.3s ease, background 0.3s ease;
     }
@@ -699,21 +595,21 @@
     .form-group input:focus,
     .form-group textarea:focus {
       outline: none;
-      border-color: var(--primary);
+      border-color: #ff6b35;
       background: rgba(255, 255, 255, 0.08);
       box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
     }
 
     .form-group input::placeholder,
     .form-group textarea::placeholder {
-      color: var(--gray-300);
+      color: #8a8a8a;
     }
 
     /* ===== FOOTER ===== */
     .site-footer {
-      background: var(--gray-900);
+      background: #111111;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding: var(--space-12) 0;
+      padding: 3rem 0;
     }
 
     .footer__content {
@@ -721,14 +617,14 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: var(--space-4);
+      gap: 1rem;
     }
 
     .footer__text {
-      color: var(--gray-300);
+      color: #8a8a8a;
     }
 
-    /* ===== RESPONSIVE AJUSTES FINALES ===== */
+    /* ===== RESPONSIVE ===== */
     @media (max-width: 767px) {
       .hero__actions {
         flex-direction: column;
@@ -738,13 +634,9 @@
         width: 100%;
       }
       
-      .timeline::before {
-        left: 30px;
-      }
-
       .timeline-item {
         flex-direction: column;
-        align-items: flex-start;
+        text-align: center;
       }
       
       .footer__content {
@@ -753,11 +645,12 @@
       }
     }
 
-    /* ===== ANIMACIONES RESPETANDO PREFERENCIAS DE USUARIO ===== */
+    /* ===== ANIMACIONES RESPETANDO PREFERENCIAS ===== */
     @media (prefers-reduced-motion: reduce) {
       html {
         scroll-behavior: auto;
       }
+      
       * {
         animation-duration: 0.001ms !important;
         animation-iteration-count: 1 !important;
@@ -765,7 +658,7 @@
       }
       
       .wave-bar {
-        height: 60px !important;
+        animation: none !important;
       }
     }
   </style>
@@ -773,7 +666,7 @@
 <body>
   <a class="skip-link" href="#main">Saltar al contenido principal</a>
 
-  <!-- Header flotante -->
+  <!-- Header -->
   <header class="site-header">
     <div class="container header__inner">
       <a href="#home" class="logo">
@@ -781,7 +674,7 @@
         <span class="logo__accent">Music</span>
       </a>
 
-      <button class="menu-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Abrir menú">
+      <button class="menu-toggle" id="menu-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Abrir menú">
         <span class="menu-toggle__bar"></span>
         <span class="menu-toggle__bar"></span>
         <span class="menu-toggle__bar"></span>
@@ -801,7 +694,6 @@
   <main id="main" tabindex="-1">
     <!-- Hero Section -->
     <section id="home" class="hero">
-      <div class="hero__bg"></div>
       <div class="container hero__content">
         <div class="hero__text">
           <h1 class="hero__title">
@@ -813,7 +705,7 @@
             Co-creamos tu marca urbana con calidad de estudio, contrato 50/50 y estrategia TikTok-first. Sin exclusividad, control total.
           </p>
           <div class="hero__actions">
-            <a href="#contacto" class="btn btn--primary btn--glow">Evalúa tu Demo Gratis</a>
+            <a href="#contacto" class="btn btn--primary">Evalúa tu Demo Gratis</a>
             <a href="#servicios" class="btn btn--outline">Ver Plan 8 Semanas</a>
           </div>
         </div>
@@ -831,8 +723,8 @@
       </div>
     </section>
 
-    <!-- Servicios y Fortalezas -->
-    <section id="servicios" class="section why-fenix">
+    <!-- Servicios -->
+    <section id="servicios" class="section">
       <div class="container">
         <h2 class="section__title">¿Por Qué Fe-nix?</h2>
         <div class="features">
@@ -854,61 +746,59 @@
         </div>
         
         <div class="plan-section">
-            <h2 class="section__title">Plan 8 Semanas</h2>
-            <p class="section__subtitle">Lleva tu sencillo de maqueta a master, con lanzamiento para TikTok y playlists</p>
-            
-            <div class="timeline">
-              <div class="timeline-item">
-                <div class="timeline-marker">1-2</div>
-                <div class="timeline-content">
-                  <h3>Brief & Producción</h3>
-                  <p>Brief creativo y producción en estudio profesional</p>
-                </div>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-marker">3-5</div>
-                <div class="timeline-content">
-                  <h3>Master & Contenido</h3>
-                  <p>Masterización, arte y blueprint para TikTok (12-15 piezas)</p>
-                </div>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-marker">6-8</div>
-                <div class="timeline-content">
-                  <h3>Lanzamiento</h3>
-                  <p>Distribución, pitch a playlists y dashboard de KPIs</p>
-                </div>
+          <h2 class="section__title">Plan 8 Semanas</h2>
+          <p class="section__subtitle">Lleva tu sencillo de maqueta a master, con lanzamiento para TikTok y playlists</p>
+          
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-marker">1-2</div>
+              <div class="timeline-content">
+                <h3>Brief & Producción</h3>
+                <p>Brief creativo y producción en estudio profesional</p>
               </div>
             </div>
+            <div class="timeline-item">
+              <div class="timeline-marker">3-5</div>
+              <div class="timeline-content">
+                <h3>Master & Contenido</h3>
+                <p>Masterización, arte y blueprint para TikTok (12-15 piezas)</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-marker">6-8</div>
+              <div class="timeline-content">
+                <h3>Lanzamiento</h3>
+                <p>Distribución, pitch a playlists y dashboard de KPIs</p>
+              </div>
+            </div>
+          </div>
         </div>
         
         <div class="section__cta">
-          <a href="/docs/contrato-muestra.pdf" class="btn btn--secondary" download>Descarga Contrato Muestra</a>
+          <a href="#contacto" class="btn btn--secondary">Descarga Contrato Muestra</a>
         </div>
       </div>
     </section>
 
     <!-- Casos de Éxito -->
-    <section id="casos" class="section cases-section">
+    <section id="casos" class="section">
       <div class="container">
         <h2 class="section__title">Artistas Como Tú</h2>
         <div class="case-study">
-          <div class="case-study__content">
-            <h3 class="case-study__artist">ZKR</h3>
-            <p class="case-study__result">De home studio a <span class="highlight">+5k streams</span> en Spotify en 8 semanas</p>
-            <div class="case-study__stats">
-              <div class="stat">
-                <span class="stat__number">5K+</span>
-                <span class="stat__label">Streams</span>
-              </div>
-              <div class="stat">
-                <span class="stat__number">8</span>
-                <span class="stat__label">Semanas</span>
-              </div>
-              <div class="stat">
-                <span class="stat__number">50/50</span>
-                <span class="stat__label">Contrato</span>
-              </div>
+          <h3 class="case-study__artist">ZKR</h3>
+          <p class="case-study__result">De home studio a <span class="highlight">+5k streams</span> en Spotify en 8 semanas</p>
+          <div class="case-study__stats">
+            <div class="stat">
+              <span class="stat__number">5K+</span>
+              <span class="stat__label">Streams</span>
+            </div>
+            <div class="stat">
+              <span class="stat__number">8</span>
+              <span class="stat__label">Semanas</span>
+            </div>
+            <div class="stat">
+              <span class="stat__number">50/50</span>
+              <span class="stat__label">Contrato</span>
             </div>
           </div>
         </div>
@@ -916,13 +806,12 @@
     </section>
 
     <!-- Contacto -->
-    <section id="contacto" class="section contact-section">
+    <section id="contacto" class="section">
       <div class="container">
         <h2 class="section__title">Envía tu Demo y Empecemos</h2>
         <p class="section__subtitle">Te respondemos en menos de 24 horas</p>
         
-        <!-- Para que el form funcione, reemplaza el `action` con tu URL de Formspree -->
-        <form class="contact-form" id="demo-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <form class="contact-form" id="demo-form">
           <div class="form-group">
             <label for="name">Nombre Artístico</label>
             <input type="text" id="name" name="name" required>
@@ -948,7 +837,7 @@
   <footer class="site-footer">
     <div class="container">
       <div class="footer__content">
-        <a href="#home" class="logo footer__brand">
+        <a href="#home" class="logo">
           <span class="logo__text">Fe-nix</span>
           <span class="logo__accent">Music</span>
         </a>
@@ -959,119 +848,89 @@
 
   <script>
     // ===== MENÚ MÓVIL =====
-    (function() {
-      const toggle = document.querySelector('.menu-toggle');
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggle = document.getElementById('menu-toggle');
       const nav = document.getElementById('primary-nav');
       
       if (!toggle || !nav) return;
       
       function openNav() {
         nav.classList.add('is-open');
+        toggle.classList.add('active');
         toggle.setAttribute('aria-expanded', 'true');
         document.body.style.overflow = 'hidden';
       }
       
       function closeNav() {
         nav.classList.remove('is-open');
+        toggle.classList.remove('active');
         toggle.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
       }
       
-      toggle.addEventListener('click', () => {
+      toggle.addEventListener('click', function() {
         const expanded = toggle.getAttribute('aria-expanded') === 'true';
-        expanded ? closeNav() : openNav();
+        if (expanded) {
+          closeNav();
+        } else {
+          openNav();
+        }
       });
       
       // Cerrar con Escape
-      document.addEventListener('keydown', (e) => {
+      document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && nav.classList.contains('is-open')) {
           closeNav();
         }
       });
       
-      // Cerrar al hacer clic en un enlace del menú
-      nav.addEventListener('click', (e) => {
-        if (e.target.closest('a')) {
+      // Cerrar al hacer clic en enlaces
+      nav.addEventListener('click', function(e) {
+        if (e.target.tagName === 'A') {
           closeNav();
         }
       });
-    })();
 
-    // ===== HEADER SCROLL EFFECT =====
-    let lastScroll = 0;
-    const header = document.querySelector('.site-header');
+      // ===== HEADER SCROLL EFFECT =====
+      let lastScroll = 0;
+      const header = document.querySelector('.site-header');
 
-    window.addEventListener('scroll', () => {
-      const currentScroll = window.pageYOffset;
-      
-      if (currentScroll > 100 && currentScroll > lastScroll) {
-        // Scroll hacia abajo
-        header.style.transform = 'translateY(-100%)';
-      } else {
-        // Scroll hacia arriba
-        header.style.transform = 'translateY(0)';
-      }
-      
-      lastScroll = currentScroll <= 0 ? 0 : currentScroll; // Evita valores negativos
-    });
-
-    // ===== FORM SUBMISSION (Para usar con Formspree) =====
-    // El HTML ya incluye el `action` y `method`, por lo que el envío funciona sin JS.
-    // Este script opcional puede dar feedback al usuario.
-    const form = document.getElementById('demo-form');
-
-    async function handleSubmit(event) {
-        event.preventDefault();
-        const status = document.createElement('p');
-        const btn = form.querySelector('button');
-        const originalBtnText = btn.textContent;
+      window.addEventListener('scroll', function() {
+        const currentScroll = window.pageYOffset;
         
-        btn.disabled = true;
+        if (currentScroll > 100 && currentScroll > lastScroll) {
+          header.style.transform = 'translateY(-100%)';
+        } else {
+          header.style.transform = 'translateY(0)';
+        }
+        
+        lastScroll = currentScroll <= 0 ? 0 : currentScroll;
+      });
+
+      // ===== FORMULARIO =====
+      const form = document.getElementById('demo-form');
+      
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const btn = form.querySelector('button[type="submit"]');
+        const originalText = btn.textContent;
+        
         btn.textContent = 'Enviando...';
+        btn.disabled = true;
         
-        const data = new FormData(event.target);
-        fetch(event.target.action, {
-            method: form.method,
-            body: data,
-            headers: {
-                'Accept': 'application/json'
-            }
-        }).then(response => {
-            if (response.ok) {
-                status.textContent = "¡Gracias por tu demo! Te contactaremos pronto.";
-                status.style.color = 'var(--accent)';
-                form.reset();
-                btn.textContent = 'Enviado ✅';
-            } else {
-                response.json().then(data => {
-                    if (Object.hasOwn(data, 'errors')) {
-                        status.textContent = data["errors"].map(error => error["message"]).join(", ");
-                    } else {
-                        status.textContent = "Oops! Hubo un problema al enviar tu formulario.";
-                    }
-                    status.style.color = 'var(--primary)';
-                    btn.disabled = false;
-                    btn.textContent = originalBtnText;
-                })
-            }
-        }).catch(error => {
-            status.textContent = "Oops! Hubo un problema al enviar tu formulario.";
-            status.style.color = 'var(--primary)';
+        // Simular envío (aquí conectarías con tu servicio)
+        setTimeout(function() {
+          btn.textContent = '¡Demo Enviado! ✅';
+          
+          setTimeout(function() {
+            btn.textContent = originalText;
             btn.disabled = false;
-            btn.textContent = originalBtnText;
-        });
-        
-        form.appendChild(status);
-        setTimeout(() => {
-          status.remove();
-          if(btn.textContent === 'Enviado ✅') {
-            btn.textContent = originalBtnText;
-            btn.disabled = false;
-          }
-        }, 5000);
-    }
-    form.addEventListener("submit", handleSubmit);
-
+            form.reset();
+          }, 3000);
+        }, 2000);
+      });
+    });
   </script>
 </body>
 </html>
