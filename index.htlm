@@ -1,0 +1,1077 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fe-nix Music: Sello Urbano Independiente Bogotá | Plan 8 Semanas</title>
+  <meta name="description" content="Co-crea tu marca urbana con Fe-nix Music. Plan 8 semanas con contrato 50/50, producción pro y estrategia TikTok. Evalúa tu demo gratis en Bogotá." />
+  
+  <!-- Preconexión para Google Fonts para mejorar la velocidad de carga -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Barlow:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== RESET & BASE ===== */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: #ffffff;
+      background: #0a0a0a;
+      overflow-x: hidden;
+    }
+
+    /* ===== VARIABLES ===== */
+    :root {
+      /* Colores */
+      --black: #0a0a0a;
+      --gray-900: #111111;
+      --gray-800: #1a1a1a;
+      --gray-700: #2a2a2a;
+      --gray-600: #3a3a3a;
+      --gray-300: #8a8a8a;
+      --gray-100: #f5f5f5;
+      --white: #ffffff;
+      
+      --primary: #ff6b35;
+      --primary-light: #ff8555;
+      --primary-dark: #e55a2b;
+      --secondary: #ffd23f;
+      --accent: #06d6a0;
+      
+      /* Espaciado */
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --space-24: 6rem;
+      
+      /* Contenedor */
+      --max-width: 1200px;
+      
+      /* Tipografía */
+      --font-display: 'Barlow', sans-serif;
+      --font-body: 'Inter', sans-serif;
+    }
+
+    /* ===== UTILIDADES ===== */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--space-4);
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        padding: 0 var(--space-8);
+      }
+    }
+
+    /* ===== SKIP LINK (ACCESIBILIDAD) ===== */
+    .skip-link {
+      position: absolute;
+      top: -4rem;
+      left: var(--space-4);
+      background: var(--primary);
+      color: var(--white);
+      padding: var(--space-2) var(--space-4);
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      z-index: 1000;
+      transition: top 0.3s;
+    }
+
+    .skip-link:focus {
+      top: var(--space-4);
+    }
+
+    /* ===== HEADER ===== */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(10, 10, 10, 0.9);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(255, 107, 53, 0.1);
+      z-index: 100;
+      transition: transform 0.3s ease;
+    }
+
+    .header__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 80px;
+    }
+
+    .logo {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.5rem;
+      text-decoration: none;
+      color: var(--white);
+    }
+
+    .logo__text {
+      color: var(--white);
+    }
+
+    .logo__accent {
+      color: var(--primary);
+    }
+
+    /* Menu Toggle (Móvil) */
+    .menu-toggle {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 44px;
+      height: 44px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      z-index: 101;
+      padding: 10px;
+    }
+
+    .menu-toggle__bar {
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+      transform-origin: center;
+    }
+
+    .menu-toggle[aria-expanded="true"] .menu-toggle__bar:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle[aria-expanded="true"] .menu-toggle__bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle[aria-expanded="true"] .menu-toggle__bar:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* Navegación */
+    .primary-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(10, 10, 10, 0.98);
+      backdrop-filter: blur(20px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .primary-nav.is-open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .primary-nav__list {
+      list-style: none;
+      text-align: center;
+    }
+
+    .primary-nav__list li {
+      margin: var(--space-6) 0;
+    }
+
+    .primary-nav__list a {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--white);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .primary-nav__list a:hover,
+    .primary-nav__list a:focus {
+      color: var(--primary);
+    }
+
+    @media (min-width: 768px) {
+      .menu-toggle {
+        display: none;
+      }
+      
+      .primary-nav {
+        position: static;
+        background: transparent;
+        backdrop-filter: none;
+        opacity: 1;
+        visibility: visible;
+        width: auto;
+        height: auto;
+      }
+      
+      .primary-nav__list {
+        display: flex;
+        gap: var(--space-8);
+      }
+      
+      .primary-nav__list li {
+        margin: 0;
+      }
+      
+      .primary-nav__list a {
+        font-size: 1rem;
+        font-weight: 500;
+        position: relative;
+        padding-bottom: 5px;
+      }
+
+      .primary-nav__list a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--primary);
+        transition: width 0.3s ease;
+      }
+      .primary-nav__list a:hover::after,
+      .primary-nav__list a:focus::after {
+        width: 100%;
+      }
+    }
+
+    /* ===== BOTONES ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      padding: var(--space-4) var(--space-8);
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .btn--primary {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: var(--white);
+      border-color: var(--primary);
+    }
+
+    .btn--primary:hover,
+    .btn--primary:focus {
+      background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+    }
+
+    .btn--glow {
+      box-shadow: 0 0 20px rgba(255, 107, 53, 0.4);
+    }
+
+    .btn--outline {
+      background: transparent;
+      color: var(--white);
+      border-color: var(--white);
+    }
+
+    .btn--outline:hover,
+    .btn--outline:focus {
+      background: var(--white);
+      color: var(--black);
+    }
+
+    .btn--secondary {
+      background: var(--secondary);
+      color: var(--black);
+      border-color: var(--secondary);
+    }
+
+    .btn--secondary:hover,
+    .btn--secondary:focus {
+      background: transparent;
+      color: var(--secondary);
+      border-color: var(--secondary);
+    }
+
+    .btn--full {
+      width: 100%;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding-top: 80px; /* Offset for fixed header */
+    }
+
+    .hero__bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 50%, rgba(255, 107, 53, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 80% 20%, rgba(6, 214, 160, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 40% 80%, rgba(255, 210, 63, 0.1) 0%, transparent 40%);
+      z-index: -1;
+    }
+
+    .hero__content {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-12);
+      align-items: center;
+    }
+
+    @media (min-width: 968px) {
+      .hero__content {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .hero__title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 8vw, 4.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: var(--space-6);
+    }
+
+    .hero__title-line {
+      display: block;
+    }
+
+    .hero__title-line--accent {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+    }
+
+    .hero__subtitle {
+      font-size: 1.25rem;
+      color: var(--gray-300);
+      max-width: 50ch;
+      margin-bottom: var(--space-8);
+    }
+
+    .hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+    }
+
+    /* Sound Wave Animation */
+    .hero__visual {
+      display: none;
+    }
+    @media (min-width: 968px) {
+      .hero__visual {
+        display: block;
+      }
+    }
+
+    .sound-wave {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      height: 200px;
+      justify-content: center;
+    }
+
+    .wave-bar {
+      width: 8px;
+      background: linear-gradient(to top, var(--primary), var(--secondary));
+      border-radius: 4px;
+      animation: wave 1.5s ease-in-out infinite alternate;
+    }
+
+    .wave-bar:nth-child(1) { animation-delay: 0s; }
+    .wave-bar:nth-child(2) { animation-delay: 0.1s; }
+    .wave-bar:nth-child(3) { animation-delay: 0.2s; }
+    .wave-bar:nth-child(4) { animation-delay: 0.3s; }
+    .wave-bar:nth-child(5) { animation-delay: 0.4s; }
+    .wave-bar:nth-child(6) { animation-delay: 0.5s; }
+    .wave-bar:nth-child(7) { animation-delay: 0.6s; }
+
+    @keyframes wave {
+      0% { height: 20px; }
+      100% { height: 120px; }
+    }
+
+    /* ===== SECCIONES ===== */
+    .section {
+      padding: var(--space-16) 0;
+    }
+    @media (min-width: 768px) {
+      .section {
+        padding: var(--space-24) 0;
+      }
+    }
+
+    .section__title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: var(--space-8);
+      background: linear-gradient(135deg, var(--white) 0%, var(--gray-300) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+    }
+
+    .section__subtitle {
+      font-size: 1.25rem;
+      color: var(--gray-300);
+      text-align: center;
+      max-width: 60ch;
+      margin: 0 auto var(--space-12);
+    }
+
+    .section__cta {
+      text-align: center;
+      margin-top: var(--space-12);
+    }
+
+    /* ===== FEATURES ===== */
+    .features {
+      display: grid;
+      gap: var(--space-8);
+      margin-bottom: var(--space-12);
+    }
+
+    @media (min-width: 768px) {
+      .features {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .feature {
+      text-align: center;
+      padding: var(--space-8);
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .feature:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .feature__icon {
+      font-size: 3rem;
+      margin-bottom: var(--space-4);
+      display: block;
+    }
+
+    .feature__title {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: var(--space-3);
+      color: var(--white);
+    }
+
+    .feature__text {
+      color: var(--gray-300);
+    }
+
+    /* ===== TIMELINE ===== */
+    .timeline {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      padding: var(--space-8) 0;
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 30px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    @media (min-width: 768px) {
+      .timeline::before {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: var(--space-6);
+      margin-bottom: var(--space-8);
+      position: relative;
+    }
+
+    .timeline-marker {
+      flex-shrink: 0;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: var(--black);
+      font-size: 0.9rem;
+      border: 4px solid var(--black);
+      z-index: 1;
+    }
+
+    .timeline-content {
+      background: var(--gray-900);
+      padding: var(--space-6);
+      border-radius: 12px;
+      flex-grow: 1;
+    }
+    
+    @media (min-width: 768px) {
+      .timeline-item:nth-child(odd) {
+        flex-direction: row-reverse;
+      }
+
+      .timeline-item:nth-child(odd) .timeline-content {
+        text-align: right;
+      }
+      
+      .timeline-item {
+        width: 50%;
+      }
+      .timeline-item:nth-child(even) {
+        align-self: flex-start;
+        padding-right: var(--space-8);
+        transform: translateX(-60px);
+      }
+      .timeline-item:nth-child(odd) {
+        align-self: flex-end;
+        padding-left: var(--space-8);
+        transform: translateX(60px);
+      }
+    }
+
+    .timeline-content h3 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: var(--space-2);
+      color: var(--white);
+    }
+
+    .timeline-content p {
+      color: var(--gray-300);
+    }
+
+    /* ===== CASE STUDY ===== */
+    .case-study {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+      padding: var(--space-12);
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 30px;
+    }
+
+    .case-study__artist {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: var(--space-4);
+    }
+
+    .case-study__result {
+      font-size: 1.25rem;
+      margin-bottom: var(--space-8);
+      color: var(--gray-300);
+    }
+
+    .highlight {
+      color: var(--secondary);
+      font-weight: 700;
+    }
+
+    .case-study__stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: var(--space-6);
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat__number {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--white);
+    }
+
+    .stat__label {
+      font-size: 0.875rem;
+      color: var(--gray-300);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* ===== FORMULARIO ===== */
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: var(--gray-900);
+      padding: var(--space-8);
+      border-radius: 20px;
+    }
+
+    .form-group {
+      margin-bottom: var(--space-6);
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: var(--space-2);
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: var(--space-4);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      color: var(--white);
+      font-size: 1rem;
+      transition: border-color 0.3s ease, background 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: var(--gray-300);
+    }
+
+    /* ===== FOOTER ===== */
+    .site-footer {
+      background: var(--gray-900);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding: var(--space-12) 0;
+    }
+
+    .footer__content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+    }
+
+    .footer__text {
+      color: var(--gray-300);
+    }
+
+    /* ===== RESPONSIVE AJUSTES FINALES ===== */
+    @media (max-width: 767px) {
+      .hero__actions {
+        flex-direction: column;
+      }
+      
+      .btn {
+        width: 100%;
+      }
+      
+      .timeline::before {
+        left: 30px;
+      }
+
+      .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .footer__content {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    /* ===== ANIMACIONES RESPETANDO PREFERENCIAS DE USUARIO ===== */
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+      * {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+      }
+      
+      .wave-bar {
+        height: 60px !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido principal</a>
+
+  <!-- Header flotante -->
+  <header class="site-header">
+    <div class="container header__inner">
+      <a href="#home" class="logo">
+        <span class="logo__text">Fe-nix</span>
+        <span class="logo__accent">Music</span>
+      </a>
+
+      <button class="menu-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Abrir menú">
+        <span class="menu-toggle__bar"></span>
+        <span class="menu-toggle__bar"></span>
+        <span class="menu-toggle__bar"></span>
+      </button>
+
+      <nav id="primary-nav" class="primary-nav" aria-label="Navegación principal">
+        <ul class="primary-nav__list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#casos">Casos</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero__bg"></div>
+      <div class="container hero__content">
+        <div class="hero__text">
+          <h1 class="hero__title">
+            <span class="hero__title-line">De Maqueta</span>
+            <span class="hero__title-line hero__title-line--accent">a Hit</span>
+            <span class="hero__title-line">en 8 Semanas</span>
+          </h1>
+          <p class="hero__subtitle">
+            Co-creamos tu marca urbana con calidad de estudio, contrato 50/50 y estrategia TikTok-first. Sin exclusividad, control total.
+          </p>
+          <div class="hero__actions">
+            <a href="#contacto" class="btn btn--primary btn--glow">Evalúa tu Demo Gratis</a>
+            <a href="#servicios" class="btn btn--outline">Ver Plan 8 Semanas</a>
+          </div>
+        </div>
+        <div class="hero__visual">
+          <div class="sound-wave">
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Servicios y Fortalezas -->
+    <section id="servicios" class="section why-fenix">
+      <div class="container">
+        <h2 class="section__title">¿Por Qué Fe-nix?</h2>
+        <div class="features">
+          <article class="feature">
+            <div class="feature__icon">💯</div>
+            <h3 class="feature__title">Transparencia Total</h3>
+            <p class="feature__text">Contrato de 1 página 50/50 y dashboard de métricas en vivo.</p>
+          </article>
+          <article class="feature">
+            <div class="feature__icon">📱</div>
+            <h3 class="feature__title">TikTok-First</h3>
+            <p class="feature__text">Blueprint de 12-15 piezas para viralizar tu música.</p>
+          </article>
+          <article class="feature">
+            <div class="feature__icon">🎵</div>
+            <h3 class="feature__title">Calidad de Calle</h3>
+            <p class="feature__text">Producción profesional sin perder tu esencia urbana.</p>
+          </article>
+        </div>
+        
+        <div class="plan-section">
+            <h2 class="section__title">Plan 8 Semanas</h2>
+            <p class="section__subtitle">Lleva tu sencillo de maqueta a master, con lanzamiento para TikTok y playlists</p>
+            
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-marker">1-2</div>
+                <div class="timeline-content">
+                  <h3>Brief & Producción</h3>
+                  <p>Brief creativo y producción en estudio profesional</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-marker">3-5</div>
+                <div class="timeline-content">
+                  <h3>Master & Contenido</h3>
+                  <p>Masterización, arte y blueprint para TikTok (12-15 piezas)</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-marker">6-8</div>
+                <div class="timeline-content">
+                  <h3>Lanzamiento</h3>
+                  <p>Distribución, pitch a playlists y dashboard de KPIs</p>
+                </div>
+              </div>
+            </div>
+        </div>
+        
+        <div class="section__cta">
+          <a href="/docs/contrato-muestra.pdf" class="btn btn--secondary" download>Descarga Contrato Muestra</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Casos de Éxito -->
+    <section id="casos" class="section cases-section">
+      <div class="container">
+        <h2 class="section__title">Artistas Como Tú</h2>
+        <div class="case-study">
+          <div class="case-study__content">
+            <h3 class="case-study__artist">ZKR</h3>
+            <p class="case-study__result">De home studio a <span class="highlight">+5k streams</span> en Spotify en 8 semanas</p>
+            <div class="case-study__stats">
+              <div class="stat">
+                <span class="stat__number">5K+</span>
+                <span class="stat__label">Streams</span>
+              </div>
+              <div class="stat">
+                <span class="stat__number">8</span>
+                <span class="stat__label">Semanas</span>
+              </div>
+              <div class="stat">
+                <span class="stat__number">50/50</span>
+                <span class="stat__label">Contrato</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="section contact-section">
+      <div class="container">
+        <h2 class="section__title">Envía tu Demo y Empecemos</h2>
+        <p class="section__subtitle">Te respondemos en menos de 24 horas</p>
+        
+        <!-- Para que el form funcione, reemplaza el `action` con tu URL de Formspree -->
+        <form class="contact-form" id="demo-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="form-group">
+            <label for="name">Nombre Artístico</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="demo">Enlace a Demo (SoundCloud/YouTube)</label>
+            <input type="url" id="demo" name="demo" placeholder="https://" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Cuéntanos sobre tu proyecto</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">Enviar Demo</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__content">
+        <a href="#home" class="logo footer__brand">
+          <span class="logo__text">Fe-nix</span>
+          <span class="logo__accent">Music</span>
+        </a>
+        <p class="footer__text">© 2025 Fe-nix Music • Bogotá, Colombia</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ===== MENÚ MÓVIL =====
+    (function() {
+      const toggle = document.querySelector('.menu-toggle');
+      const nav = document.getElementById('primary-nav');
+      
+      if (!toggle || !nav) return;
+      
+      function openNav() {
+        nav.classList.add('is-open');
+        toggle.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+      
+      function closeNav() {
+        nav.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+      
+      toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        expanded ? closeNav() : openNav();
+      });
+      
+      // Cerrar con Escape
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && nav.classList.contains('is-open')) {
+          closeNav();
+        }
+      });
+      
+      // Cerrar al hacer clic en un enlace del menú
+      nav.addEventListener('click', (e) => {
+        if (e.target.closest('a')) {
+          closeNav();
+        }
+      });
+    })();
+
+    // ===== HEADER SCROLL EFFECT =====
+    let lastScroll = 0;
+    const header = document.querySelector('.site-header');
+
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+      
+      if (currentScroll > 100 && currentScroll > lastScroll) {
+        // Scroll hacia abajo
+        header.style.transform = 'translateY(-100%)';
+      } else {
+        // Scroll hacia arriba
+        header.style.transform = 'translateY(0)';
+      }
+      
+      lastScroll = currentScroll <= 0 ? 0 : currentScroll; // Evita valores negativos
+    });
+
+    // ===== FORM SUBMISSION (Para usar con Formspree) =====
+    // El HTML ya incluye el `action` y `method`, por lo que el envío funciona sin JS.
+    // Este script opcional puede dar feedback al usuario.
+    const form = document.getElementById('demo-form');
+
+    async function handleSubmit(event) {
+        event.preventDefault();
+        const status = document.createElement('p');
+        const btn = form.querySelector('button');
+        const originalBtnText = btn.textContent;
+        
+        btn.disabled = true;
+        btn.textContent = 'Enviando...';
+        
+        const data = new FormData(event.target);
+        fetch(event.target.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                status.textContent = "¡Gracias por tu demo! Te contactaremos pronto.";
+                status.style.color = 'var(--accent)';
+                form.reset();
+                btn.textContent = 'Enviado ✅';
+            } else {
+                response.json().then(data => {
+                    if (Object.hasOwn(data, 'errors')) {
+                        status.textContent = data["errors"].map(error => error["message"]).join(", ");
+                    } else {
+                        status.textContent = "Oops! Hubo un problema al enviar tu formulario.";
+                    }
+                    status.style.color = 'var(--primary)';
+                    btn.disabled = false;
+                    btn.textContent = originalBtnText;
+                })
+            }
+        }).catch(error => {
+            status.textContent = "Oops! Hubo un problema al enviar tu formulario.";
+            status.style.color = 'var(--primary)';
+            btn.disabled = false;
+            btn.textContent = originalBtnText;
+        });
+        
+        form.appendChild(status);
+        setTimeout(() => {
+          status.remove();
+          if(btn.textContent === 'Enviado ✅') {
+            btn.textContent = originalBtnText;
+            btn.disabled = false;
+          }
+        }, 5000);
+    }
+    form.addEventListener("submit", handleSubmit);
+
+  </script>
+</body>
+</html>
